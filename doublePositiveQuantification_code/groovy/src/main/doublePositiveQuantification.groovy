@@ -16,20 +16,13 @@ import java.io.File;
 
 // INPUT UI
 //
-#
-@File(label = "Input File Directory", style = "directory") inputFilesDir
-#
-@File(label = "Output directory", style = "directory") outputDir
-#
-@Integer(label = "Dapi Channel", value = 0) dapiChannel
-#
-@Integer(label = "CD74 Channel", value = 1) greenChannel
-#
-@Integer(label = "Cancer Channel", value = 2) cancerChannel
-#
-@Integer(label = "Microglia Channel", value = 3) cyanChannel
-#
-@Integer(label = "MDK Channel", value = 4) redChannel
+#@File(label = "Input File Directory", style = "directory") inputFilesDir
+#@File(label = "Output directory", style = "directory") outputDir
+#@Integer(label = "Dapi Channel", value = 0) dapiChannel
+#@Integer(label = "CD74 Channel", value = 1) greenChannel
+#@Integer(label = "Cancer Channel", value = 2) cancerChannel
+#@Integer(label = "Microglia Channel", value = 3) cyanChannel
+#@Integer(label = "MDK Channel", value = 4) redChannel
 //#@Boolean(label = "Apply DAPI?") applyDAPI
 
 
