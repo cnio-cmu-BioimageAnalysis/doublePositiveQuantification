@@ -4,6 +4,7 @@ import ij.gui.Roi
 import ij.gui.ShapeRoi
 import ij.measure.ResultsTable
 import ij.plugin.ChannelSplitter
+import ij.plugin.ZProjector
 import ij.plugin.frame.RoiManager
 import inra.ijpb.binary.BinaryImages
 import inra.ijpb.morphology.Strel
@@ -20,7 +21,6 @@ import java.io.File;
 #@File(label = "Output directory", style = "directory") outputDir
 #@Integer(label = "Dapi Channel", value = 0) dapiChannel
 #@Integer(label = "CD74 Channel", value = 1) greenChannel
-#@Integer(label = "Cancer Channel", value = 2) cancerChannel
 #@Integer(label = "Microglia Channel", value = 3) cyanChannel
 #@Integer(label = "MDK Channel", value = 4) redChannel
 //#@Boolean(label = "Apply DAPI?") applyDAPI
@@ -64,12 +64,12 @@ for (def i = 0; i < listOfFiles.length; i++) {
             for (def k = 0.intValue(); k < imps.length; k++) {
                 /** Create image for each file in the input directory */
                 def imp = imps[k];
+                imp = ZProjector.run(imp, "max");
                 /** Split Channels */
                 def channels = ChannelSplitter.split(imp)
                 /** Get each individual channel */
                 def dapi = channels[dapiChannel.intValue()].duplicate()
                 def green = channels[greenChannel.intValue()].duplicate()
-                def cancer = channels[cancerChannel.intValue()].duplicate()
                 def cyan = channels[cyanChannel.intValue()].duplicate()
                 def red = channels[redChannel.intValue()].duplicate()
 
