@@ -62,6 +62,7 @@ for (def i = 0; i < listOfFiles.length; i++) {
             /** Create results table to store results per slice (section or plane) */
             def tableConditions = new ResultsTable()
             for (def k = 0.intValue(); k < imps.length; k++) {
+            	 IJ.log("Analyzing serie: " + imps[k].getName());
                 /** Create image for each file in the input directory */
                 def imp = imps[k];
                 imp = ZProjector.run(imp, "max");
