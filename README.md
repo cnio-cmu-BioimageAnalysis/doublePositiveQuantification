@@ -12,10 +12,6 @@ This Groovy script helps to quantify single positive and double positive nuclei 
     <img width="600" height="350" src="https://github.com/cnio-cmu-BioimageAnalysis/fluorescenceQuantification_code/assets/83207172/81cbd730-b481-4f9c-bfa8-5c4a7792c3f4">
     </p>
 
-#@Integer(label = "CD74 Channel", value = 1) greenChannel
-#@Integer(label = "Cancer Channel", value = 2) cancerChannel
-#@Integer(label = "Microglia Channel", value = 3) cyanChannel
-#@Integer(label = "MDK Channel", value = 4) redChannel
 ## Running doublePositiveQuantificatione in headless mode through ImageJ/Windows Windows Terminal (ALL parameters)
 
 ``ImageJ-win64.exe --ij2 --headless --run "/absolute_path/to/groovyscript/doublePositiveQuantification.groovy" "headless=true, inputFilesDir='/absolute_path/to/inputFiles/images',outputDir='/absolute_path/to/outputDirectory/results',dapiChannel=0,greenChannel=1,cancerChannel=2,cyanChannel=3,redChannel=4"``
